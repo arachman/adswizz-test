@@ -20,4 +20,18 @@ grl.countries << c2
 grl.logical_op = "AND"
 grl.comparison_op = "Is any of"
 
+grl2 = GeoRegionLimitation.new
+grl2.countries << c1
+grl2.logical_op = "AND"
+grl2.comparison_op = "Is any of"
+
 grl.save!
+grl2.save!
+
+dl = DeliveryLimitation.new
+dl.name = 'DeliveryLimitationTest'
+dl.geo_region_limitations << grl
+dl.geo_region_limitations << grl2
+
+dl.save!
+
