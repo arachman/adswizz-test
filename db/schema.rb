@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131013060812) do
+ActiveRecord::Schema.define(:version => 20141004074827) do
 
   create_table "countries", :force => true do |t|
     t.string "name"
   end
 
   create_table "delivery_limitations", :force => true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "geo_region_limitation_id"
   end
 
   create_table "geo_limitation_countries", :force => true do |t|
